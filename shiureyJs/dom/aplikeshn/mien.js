@@ -65,11 +65,6 @@ Performed.addEventListener("click",function(){
 const add = document.querySelector(".add")
 const input = document.querySelector("input")
 add.addEventListener("click",function(){
-    console.log("input['value']=", input['value'])
-    console.log("!tasks.includes(input['value']) & input['value']=",!tasks.includes(input['value']) & input['value'])
-    console.log("!tasks.includes(input['value'])=",!tasks.includes(input['value']) )
-    console.log("!tasks.includes(input['value']) && input['value']=",!tasks.includes(input['value']) && input['value'])
-    console.log("")
     if(!tasks.includes(input['value']) && input['value']){
         done = 0
         Performed.innerHTML ='<h1>Performed</h1>'
