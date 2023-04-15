@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>חוג לי הרשמה</title>
+    </head>
+    <body>
+        <div>
+            <div><p class="p1">שם המשתתף בחוג</p></div>
+            <div><input id="name" placeholder="שם פרטי ומשפחה"/></div>
+        </div>
+        <div>
+            <div><p class="p1">שם בית הספר</p></div>
+            <div><input id="nameSchool"/></div>
+        </div>
+        <div>
+            <fieldset>
+                <legend>לאיזה חוג ברצונך להרשם?</legend>
+                <div>
+                    <input type="radio" name="circle">
+                    <label class="p2">מוזיקה</label>
+                </div>
+                <div>
+                    <input type="radio" name="circle">
+                    <label class="p2">ציור</label>
+                </div>
+                <div>
+                    <input type="radio" name="circle">
+                    <label class="p2">רובוטיקה</label>
+                </div>
+            </fieldset>
+        </div>
+        <div>
+            <div><p class="p1">שם ההורה</p></div>
+            <div><input id="parentName" placeholder="שם פרטי ומשפחה"></div>
+        </div>
+        <div>
+            <div><p class="p1">כתובת</p></div>
+            <div><input id="Address"></div>
+        </div>
+        <div>
+            <div><p class="p1">כתובת דוא"ל</p></div>
+            <div><input id ="email" type="email"/></div>
+        </div>
+        <div>
+            <fieldset>
+                <legend>אמצעי תשלום</legend>
+                <div>
+                    <input type="radio" name="payment" checked>
+                    <label for="huey" class="p2">מזומן במקום</label>
+                </div>
+                <div>
+                    <input type="radio" name="payment">
+                    <label for="huey" class="p2">אשראי</label>
+                </div>
+            </fieldset>
+        </div>
+        <button onclick="window.location.href='index.html';">שלח</button>
+    </body>
+</html>

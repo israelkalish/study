@@ -1,0 +1,110 @@
+body{
+    width:400px;
+    height:700px;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+div{
+    width:100%;
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input{
+    width:100%;
+    height:50px;
+}
+
+button{
+    width:50%;
+    height:50px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.db{
+    display:flex;
+    flex-direction:row;
+}
+
+.dm{
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+}
+
+.bdm{
+    background-color: yellow;
+    border-radius: 100%;
+    height:70px;
+    height:20%;
+    width:45%;
+}
+
+.bdm:hover{
+    background-color: rgb(169, 237, 9);
+}
+
+.dms{
+    overflow: auto;
+    height:500px;
+}
+
+.dms2{
+    background-color: rgb(31, 31, 22);
+    color: rgb(202, 202, 188);
+}
+
+.dm2{
+    background-color: rgb(143, 143, 133);
+}
+
+.udm{
+    width:35%;
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    margin:0;
+    padding: 20;
+}
+
+.mdm{
+    background-color: rgb(225, 30, 30);
+    border-radius: 100%;
+    height:70px;
+    height:20%;
+    width:45%;
+}
+
+.mdm:hover{
+    background-color: rgb(180, 14, 11);
+}
+
+.add{
+    background-color: yellow;
+}
+
+.Performed{
+    background-color: rgb(23, 188, 15);
+}
+
+.add:hover{
+    background-color: rgb(169, 237, 9);
+}
+
+.Performed:hover{
+    background-color: rgb(169, 237, 9);
+}
+
+.change{
+    width:100%;
+    background-color: rgb(23, 188, 15);
+}
+
+.de{
+    text-decoration: line-through;
+}

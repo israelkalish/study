@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>דף ציור</title>
+  </head>
+  <body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(50, 50, 100, 100);
+        
+        ctx.fillStyle = "#00FF00";
+        ctx.fillRect(200, 50, 100, 100);
+        
+        ctx.fillStyle = "#0000FF";
+        ctx.fillRect(350, 50, 100, 100);
+    </script>
+    <title>Canvas Example</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        ctx.fillStyle = "green";
+        ctx.fillRect(50, 50, 100, 100);
+    </script>
+  </body>
+</html> -->
+
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change background color on mouseover</title>
+	<style>
+		body {
+			background-color: white;
+		}
+	</style>
+	<script>
+		document.addEventListener("mouseover", function() {
+			document.body.style.backgroundColor = "black";
+		});
+	</script>
+</head>
+<body>
+	<h1>Hover over the page to change the background color to black!</h1>
+</body>
+</html> -->
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Change background color on mouseover</title>
+	<style>
+		body {
+			background-color: white;
+		}
+		#hover-area {
+			height: 100vh;
+			width: 100vw;
+			position: fixed;
+			top: 0;
+			left: 0;
+			background-color: transparent;
+		}
+	</style>
+	<script>
+		var hoverArea = document.getElementById("hover-area");
+
+		hoverArea.addEventListener("mousemove", function(event) {
+			var x = event.clientX;
+			var y = event.clientY;
+
+			var color = "rgba(0, 0, 0, 0.5)";
+			hoverArea.style.background = "radial-gradient(circle closest-side at " + x + "px " + y + "px, transparent, " + color + ")";
+
+			setTimeout(function() {
+				hoverArea.style.background = "transparent";
+			}, 1000);
+		});
+	</script>
+</head>
+<body>
+	<h1>Hover over the page to change the background color where the mouse is!</h1>
+	<div id="hover-area"></div>
+</body>
+</html> -->
+
