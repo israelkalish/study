@@ -55,7 +55,7 @@ Performed.addEventListener("click",(perfect))
 
 function perfect(){
     done -= done*2-1 ,sort()
-    done? Performed.innerHTML ='<h1>All</h1>' : Performed.innerHTML ='<h1>Show Done</h1>'
+    done? Performed.innerHTML ='<h1>Show All</h1>' : Performed.innerHTML ='<h1>Show Done</h1>'
 }
 
 const add = document.querySelector(".add")
