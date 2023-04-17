@@ -27,6 +27,7 @@ function newMission(item) {
     taskbar['ul'] = document.createElement('ul')
     taskbar['ul'].classList.add('udm')
     taskbar['buttonDone'] = document.createElement('button')
+    taskbar['buttonDone'].style.type="radio"
     taskbar['buttonDone'].innerText ='done'
     taskbar['buttonDone'].classList.add('bdm')
     taskbar['buttonDelete'] = document.createElement('button')
