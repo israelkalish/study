@@ -8,7 +8,7 @@ let done =0
 function sort(){
     div.innerHTML =''
     for (let index = 0,design=0  ; index < tasklines.length; index++) {
-        if (tasklines[index] &&(!done || tasklines[index]['lastChild']['firstChild']['innerText'] ==='perform')) {
+        if (tasklines[index] &&(!done || tasklines[index]['isCompleted'])) {
             if(design){tasklines[index].classList.add('dm2')}
             else{tasklines[index].classList.remove('dm2')}
             div.append(tasklines[index]);
@@ -19,34 +19,31 @@ function sort(){
 
 function newMission(item) {
     if (!item){return}
-    const taskbar = {}
-    taskbar['div'] = document.createElement("div")
-    taskbar['div'].classList.add('dm')
-    taskbar['p'] = document.createElement("p")
-    taskbar['p'].innerText = item
-    taskbar['ul'] = document.createElement('ul')
-    taskbar['ul'].classList.add('udm')
-    taskbar['buttonDone'] = document.createElement('button')
-    taskbar['buttonDone'].style.type="radio"
-    taskbar['buttonDone'].innerText ='done'
-    taskbar['buttonDone'].classList.add('bdm')
-    taskbar['buttonDelete'] = document.createElement('button')
-    taskbar['buttonDelete'].innerText ='delete'
-    taskbar['buttonDelete'].classList.add('mdm')
-    taskbar['ul'].append(taskbar['buttonDone'],taskbar['buttonDelete'])
-    taskbar['div'].append(taskbar['p'],taskbar['ul'])
-    tasklines.push(taskbar['div'])
+    const div = document.createElement("div")
+    const p = document.createElement("p")
+    const ul = document.createElement('ul')
+    const input = document.createElement('input')
+    const buttonDelete = document.createElement('button')
+
+    div.classList.add('dm')
+    ul.classList.add('udm')
+    input.classList.add('bdm')
+    buttonDelete.classList.add('mdm')
+
+    p.innerText = item
+    input.type="checkbox"
+    div.isCompleted= false
+    buttonDelete.innerText ='delete'
     
-    taskbar['buttonDone'].addEventListener("click", function(){
-        taskbar['p'].classList.toggle('de')
-        if (taskbar['buttonDone'].innerText ==='done') {
-            taskbar['buttonDone'].innerText ='perform'
-        }else{
-            taskbar['buttonDone'].innerText ='done'
-        }
-        sort()
+    ul.append(input,buttonDelete)
+    div.append(p,ul)
+    tasklines.push(div)
+    
+    input.addEventListener("click", function(){
+        p.classList.toggle('de')
+        div.isCompleted =!(div.isCompleted)
     })
-    taskbar['buttonDelete'].addEventListener("click", function(){
+    buttonDelete.addEventListener("click", function(){
         delete tasklines[tasks.indexOf(item)]
         delete tasks[tasks.indexOf(item)]
         sort()
@@ -54,24 +51,22 @@ function newMission(item) {
 }
 
 const Performed = document.querySelector(".Performed")
-Performed.addEventListener("click",function(){
+Performed.addEventListener("click",(perfect))
+
+function perfect(){
     done -= done*2-1 ,sort()
-    if (done) {
-        Performed.innerHTML ='<h1>All</h1>'
-    }else{
-        Performed.innerHTML ='<h1>Performed</h1>'
-    }
-})
+    done? Performed.innerHTML ='<h1>All</h1>' : Performed.innerHTML ='<h1>Performed</h1>'
+}
 
 const add = document.querySelector(".add")
 const input = document.querySelector("input")
 add.addEventListener("click",function(){
-    if(!tasks.includes(input['value']) && input['value']){
-        done = 0
-        Performed.innerHTML ='<h1>Performed</h1>'
-        tasks.push(input['value'])
-        newMission(input['value'])
-        sort()
+const theNewMission =input['value']
+    if(!tasks.includes(theNewMission) && theNewMission){
+        done = 1
+        tasks.push(theNewMission)
+        newMission(theNewMission)
+        perfect()
     }
 })
 
