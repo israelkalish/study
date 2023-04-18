@@ -15,7 +15,8 @@ const cardsArray = [
     '&#128545','&#128545',
     '&#129313','&#129313'
 ]
-let amountOfTickets = 12
+const inner = document.querySelectorAll(".inner")
+let amountOfTickets = inner.length
 const cardsOfDisPlay = []
 for (let index = 0; index < amountOfTickets/2; index++) {
     let newPlace =choosingANewCard()
@@ -25,7 +26,6 @@ for (let index = 0; index < amountOfTickets/2; index++) {
 console.log(cardsOfDisPlay)
 
 let lastCard =[0];
-const inner = document.querySelectorAll(".inner")
 // inner.
 console.log(inner)
 let lastClick =0 
@@ -54,27 +54,4 @@ for (let index = 0; index < inner.length; index++) {
             }, 1700)
         }
     })
-    // inner[index].addEventListener("mouseout", function(){
-    //     console.log(lastCard)
-    //     if(lastCard ===2)
-    //     {
-    //         console.log(`!lastCard`);
-    //         lastCard.innerHTML=`\n<p class="front">&#10068;</p>\n<p class="back back1"></p>\n`
-    //     }else { 
-    //     console.log(`lastCard`);}
-    // })
-
-    
 }
-
-// inner.forEach((item)=>{
-//     i++
-//     
-//         console.log(cardsOfDisPlay)
-        
-//  
-    
-// })
-
-
-// firstChild innerText
