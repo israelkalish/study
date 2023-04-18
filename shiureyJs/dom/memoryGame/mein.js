@@ -6,6 +6,7 @@ const choosingANewCard = ()=> {
     let i =Math.floor(Math.random()*cardsArray.length)
     if (cardsOfDisPlay.includes(cardsArray[i])){return choosingANewCard()} else{return cardsArray[i]}
 }
+
 const cardsArray = [    
     '&#128525','&#128525',
     '&#128561','&#128561',
@@ -15,6 +16,7 @@ const cardsArray = [
     '&#129313','&#129313'
 ]
 const inner = document.querySelectorAll(".inner")
+
 let amountOfTickets = inner.length
 const cardsOfDisPlay = []
 for (let index = 0; index < amountOfTickets/2; index++) {
@@ -25,7 +27,7 @@ for (let index = 0; index < amountOfTickets/2; index++) {
 
 let lastCard =[0];
 let lastClick =0 
-for (let index = 0; index < inner.length; index++) {
+for (let index = 0; index < amountOfTickets; index++) {
     inner[index].addEventListener("click", function(){
         let d = new Date();
         let t = d.getTime();
@@ -40,7 +42,7 @@ for (let index = 0; index < inner.length; index++) {
                 return
             }
             lastClick = t;
-            setTimeout(function() {
+            setTimeout(function(){
             lastCard[1].innerHTML=`\n<p class="front">&#10068;</p>\n<p class="back back1"></p>\n`
             lastCard[2].innerHTML=`\n<p class="front">&#10068;</p>\n<p class="back back1"></p>\n`
             lastCard[0] = 0
