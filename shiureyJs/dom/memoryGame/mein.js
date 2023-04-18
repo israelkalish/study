@@ -33,8 +33,9 @@ for (let index = 0; index < amountOfTickets; index++) {
         let t = d.getTime();
         if(t - lastClick < 1300){return}
         inner[index].innerHTML=`\n<p class="front">${cardsOfDisPlay[index]};</p>\n<p class="back back1"></p>\n`
-        lastCard[0] ++
+        // lastCard[0] ++
         lastCard.push(inner[index])
+        if(lastCard[1]===lastCard[2]){lastCard.pop()}
         if(lastCard[2]){
             if(lastCard[1].innerText===lastCard[2].innerText){
                 lastCard[0] = 0
