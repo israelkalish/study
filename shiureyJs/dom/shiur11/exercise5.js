@@ -5,7 +5,7 @@ const dbuttons = ['blue','red','green','black','aqua'];
 const buttons = {}
 let color = 'transparent'
 
-dbuttons.forEach(function(item){
+dbuttons.forEach((item)=>{
     buttons[item] = document.createElement("button")
     buttons[item].innerText = item;
     buttons[item].style.background = item;
