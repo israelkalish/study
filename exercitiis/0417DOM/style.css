@@ -1,0 +1,34 @@
+body {
+	display: flex;
+	align-items:center;
+	justify-content: center;
+    flex-direction: column
+}
+
+button {
+    width: 250px;
+    height:31px;
+}
+
+input{
+    width: 242px;
+    height:25px;
+}
+
+div{
+	display: flex;
+	align-items:center;
+	justify-content: center;
+    flex-direction: column
+
+}
+
+il{
+    width: 250px;
+    height:31px;
+    background: red;
+    border-radius: 5px;
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
