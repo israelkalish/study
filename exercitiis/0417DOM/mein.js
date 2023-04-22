@@ -55,23 +55,9 @@ input.addEventListener("input",()=>{
     }).forEach(IndexUrbium)
     if (div.innerHTML ===``) {
         const il = document.createElement("il")
-        il.innerText = `There is no such city in the list`
+        il.innerText = input['value']+` is no such city in the list`
         div.append(il)
         console.log(`go`)
     }
 })
 
-// inp1.addEventListener("change", function(event){
-//     console.log(event)
-// })
-
-// inp2.addEventListener("input", function(event){
-//     if(event.target.value.includes("#")){
-//         event.preventDefault()
-//     }
-//     console.log(event)
-// })
-
-// inp3.addEventListener("blur", function(event){
-//     console.log(event)
-// })

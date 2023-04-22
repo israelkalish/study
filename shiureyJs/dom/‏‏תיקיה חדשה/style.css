@@ -1,0 +1,9 @@
+body{
+	width: 800px;
+}
+
+div{
+	display: flex;
+	align-items:center;
+	justify-content: center;
+}
