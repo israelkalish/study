@@ -32,7 +32,7 @@ const Button = () => <button onClick={() => {
     // }, 1000);
 }}>Click Me!</button>
 
-const Img = () => <img alt="אין לי מושג למה אני לא מצליח לטעון את התמונה" width= "65px" height= "65px" onClick={() => {
+const Img = () => <img alt="אין לי מושג למה אני לא מצליח להגדיר את התמונה" width= "65px" height= "65px" onClick={() => {
     alert(<img src={data.data[0].avatar}></img>)
 }}></img>
 
@@ -50,6 +50,8 @@ let NumberList =()=> {
 
 const Ul = () => <ul>{Button()}{Input()}{Img()}</ul>
 const Input = () => <input ></input>
-let Mint = () => <div>{Ul()}{NumberList()}</div>
-
+let Mint = () => <div>{Ul()}{NumberList()}{Img2()}</div>
+const Img2 = () => <img src = '1.jpg' alt="כינור" width= "70px" onClick={() => {
+    width= "100px"
+}}></img>
 ReactDOM.render(<Mint/>, document.getElementById('app'));
