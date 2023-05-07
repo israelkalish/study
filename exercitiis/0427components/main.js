@@ -24,11 +24,11 @@ showUser ()
 const Button = () => <button onClick={() => {
     document.body.style.background=prompt('תבחר צבע חדש')
     // setTimeout(() => {
-    // listItems.push(Color(prompt('תבחר צבע חדש')))
-    // console.log(listItems)
-    // Mint = () => <div>{Ul()}{()=> <ul>{listItems}</ul>}</div>
-    // console.log(Mint)
-    // ReactDOM.render(<Mint/>, document.getElementById('app'));
+    listItems.push(Color(prompt('תבחר צבע חדש')))
+    console.log(listItems)
+    Mint = () => <div>{<Ul/>}{()=> <ul>{listItems}</ul>}</div>
+    console.log(Mint)
+    ReactDOM.render(<Mint/>, document.getElementById('app'));
     // }, 1000);
 }}>Click Me!</button>
 
@@ -48,9 +48,9 @@ let NumberList =()=> {
     );
 }
 
-const Ul = () => <ul>{Button()}{Input()}{Img()}</ul>
+const Ul = () => <ul>{<Button/>}{<Input/>}{<Img/>}</ul>
 const Input = () => <input ></input>
-let Mint = () => <div>{Ul()}{NumberList()}{Img2()}</div>
+let Mint = () => <div>{<Ul/>}{<NumberList/>}{<Img2/>}</div>
 const Img2 = () => <img src = '1.jpg' alt="כינור" width= "70px" onClick={() => {
     width= "100px"
 }}></img>

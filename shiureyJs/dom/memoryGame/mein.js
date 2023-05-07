@@ -56,7 +56,7 @@ const flippingACard = (card,i)=>{
                         section.innerHTML=""
                         section.innerHTML=andGame()
                         section.style.fontSize = '25em';
-                    }, amountOfTickets*66)
+                    }, Math.sqrt(amountOfTickets)*200)
                 }
                 return
             }
