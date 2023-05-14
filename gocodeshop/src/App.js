@@ -1,15 +1,12 @@
 
 import './App.css';
-import { ProductFilter } from './components/ProductFilter/ProductFilter';
-import { Products } from './components/Products/Products';
+import { Routing } from './Routing';
 
 function App() {
   return (
-    <div className="App">
-    <ProductFilter/>
-    <Products/>
-    </div>
+    <Routing/>
   );
 }
 
 export default App;
+
