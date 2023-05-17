@@ -1,10 +1,14 @@
 
 import './App.css';
-import { Routing } from './Routing';
+import { ProductFilter } from './components/ProductFilter/ProductFilter';
+import { Products } from './components/Products/Products';
 
 function App() {
   return (
-    <Routing/>
+    <div className="App">
+      <ProductFilter app/>
+      <Products />
+    </div>
   );
 }
 

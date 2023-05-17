@@ -1,6 +1,7 @@
 .product-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
   
     padding: 2%;
     flex: 1 16%;

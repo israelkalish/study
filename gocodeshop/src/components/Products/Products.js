@@ -8,7 +8,7 @@ export const Products = () => {
 
     return(
         <section className="products">
-            {productsTo.map((event) => <ProductCard src={event.image} title={event.title} price={event.price} id={event.id}/>)}
+            {productsTo.map((event) => <ProductCard app className="product-card" src={event.image} title={event.title} price={event.price} id={event.id}/>)}
         </section>
     )
 }
