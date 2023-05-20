@@ -29,7 +29,6 @@ const complete = (compId)=>{
 const editing = (edit)=>{
     const editTodo =findIndex(edit[0])
     if(editTodo===-1) {return}
-	console.log(editTodo);
     todos[editTodo].title=edit[1]
     todos[editTodo].descrtiption=edit[2]
 }
@@ -52,5 +51,5 @@ fs.writeFile("todos.json", JSON.stringify(todos), err => {
  
 	if (err) throw err; 
  
-	console.log("Done writing");
+	console.log("Finished task");
 });
