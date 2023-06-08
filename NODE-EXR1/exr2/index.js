@@ -1,9 +1,17 @@
 import fs from 'fs'
+import express from 'express'
 console.log('hi')
 
-const findIndexOfTodos = (byId)=>todos.findIndex((obj)=>obj.id===parseInt(byId))
+const app = express()
+app.use(express.json());
 
-const enterDataIntoTheServer = ()=>{fs.writeFile("todos.json", JSON.stringify(todos), err => { 
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+});
+
+const findIndexOfArr = (byId)=>todos.findIndex((obj)=>obj.id===parseInt(byId))
+
+const enterDataIntoTheServer = (path)=>{fs.writeFile(path, JSON.stringify(todos), err => { 
  
 	if (err) throw err; 
  
@@ -18,33 +26,34 @@ const addNewObject = (arr)=>{
     }
     newTodo.isCompleted= false
     todos.push(newTodo)
-    enterDataIntoTheServer()
+    enterDataIntoTheServer(path)
 }
 
 const deletingObjectFromArray = (delId)=>{
-    const delTodo =findIndexOfTodos(delId[0])
+    const delTodo =findIndexOfArr(delId[0])
     if(delTodo===-1) {return}
     todos.splice(delTodo,1)
-    enterDataIntoTheServer()
+    enterDataIntoTheServer(path)
 }
 
 const toggleComplete = (toggId)=>{
-    const compTodo =findIndexOfTodos(toggId[0])
+    const compTodo =findIndexOfArr(toggId[0])
     if(compTodo===-1) {return}
     todos[compTodo].isCompleted= !todos[compTodo].isCompleted
-    enterDataIntoTheServer()
+    enterDataIntoTheServer(path)
 }
 
 const editingObjectInArray = (edit)=>{
-    const editTodo =findIndexOfTodos(edit.shift())
+    const editTodo =findIndexOfArr(edit.shift())
     if(editTodo===-1) {return}
     for (let index = 0; index < edit.length; index++) {
         todos[editTodo][edit[index++]]=edit[index]
     }
-    enterDataIntoTheServer()
+    enterDataIntoTheServer(path)
 }
 
-const todos = JSON.parse(fs.readFileSync("./todos.json", 'utf8'))
+const path =`todos.json`
+const todos = JSON.parse(fs.readFileSync(`${path}`, 'utf8'))
 const newInformation = [...process.argv]
 console.log(newInformation)
 newInformation.splice(0,2)
@@ -60,5 +69,8 @@ if(akshn==='push'){
     editingObjectInArray(newInformation)
 }
 
+app.listen(8000, () => {
+    console.log('Example app listening on port 8000!')
+});
 
 // console.log(todos)
